@@ -1,0 +1,238 @@
+:root {
+    --green: #54E6AF;
+    --blue-950: #121725;
+    --blue-900: #2C344B;
+    --blue-600: #5A668A;
+    --blue-300: #C2CBE5;
+    --white: #FFFFFF;
+    --red: #FB3E3E;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--blue-600);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--green);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #48c293;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--blue-950);
+    background-image: url('assets/desktop/bg-pattern-dots.svg'), url('assets/desktop/image-host.jpg');
+    background-repeat: no-repeat;
+    background-position: 100% 95%, 100% 50%;
+    color: var(--white);
+}
+
+.text-style-1 {
+    font-family: 'Chivo', serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 48px;
+    line-height: 120%;
+}
+
+.text-style-2 {
+    font-family: 'Chivo', serif;
+    font-weight: lighter;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.text-style-3 {
+    font-family: 'Chivo', serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 200%;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 77.77%;
+}
+
+.main-content {
+    grid-column: span 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 104px;
+    padding: 88px 64px 0 0;
+    background-color: var(--blue-950);
+}
+
+.main-content h1 span {
+    color: var(--green);
+}
+
+.main-content p {
+    width: 448px;
+    margin-top: 24px;
+    color: var(--blue-300);
+}
+
+.subscription-form {
+    position: relative;
+    width: 448px;
+    margin: 40px 0;
+}
+
+.subscription-form input {
+    width: 100%;
+    padding: 14px 24px;
+    background-color: var(--blue-900);
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    color: var(--white);
+}
+
+input::placeholder {
+    color: var(--white);
+    font-family: 'Chivo', serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 200%;
+    opacity: 50%;
+}
+
+.subscription-form button {
+    position: absolute;
+    top: 10%;
+    right: 5px;
+    padding: 8px 32px;
+    background-color: var(--green);
+    border: none;
+    border-radius: 30px;
+    color: var(--blue-950);
+    cursor: pointer;
+    transition: all ease-in 300ms;
+}
+
+.subscription-form button:hover {
+    background-color: color-mix(in srgb, var(--green) 100%, var(--white) 50%);
+}
+
+.subscription-form .submit-message {
+    margin: 0;
+    padding: 0 32px;
+    font-family: 'Chivo', serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 200%;
+}
+
+.platform-logos {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-top: 24px;
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        background-image: url('assets/desktop/bg-pattern-dots.svg'), url('assets/tablet/image-host.jpg');
+        background-position: 110% 85%, 100% 0;
+    }
+
+    .container {
+        width: 592px;
+    }
+
+    .main-content {
+        width: 592px;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    body {
+        position: relative;
+        background-image: none;
+    }
+
+    body::before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 10%;
+        background-image: url('assets/mobile/image-host.jpg');
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
+    }
+
+    .container {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 36px;
+        text-align: center;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-top: 56px;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .main-content h1 {
+        font-size: 32px;
+    }
+
+    .main-content p,
+    .subscription-form,
+    .subscription-form button,
+    .platform-logos {
+        width: 100%;
+    }
+
+    .main-content p,
+    .subscription-form button,
+    .subscription-form input,
+    input::placeholder {
+        font-size: 14px;
+    }
+
+    .subscription-form button {
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .platform-logos {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .platform-logos img {
+        width: 65px;
+        height: auto;
+    }
+}
